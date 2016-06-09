@@ -46,10 +46,6 @@ function getMode(extension) {
     mode.mode = "text/x-csharp";
     mode.file = "clike";
     break;
-  case "css":
-    mode.mode = "text/css";
-    mode.file = "css";
-    break;
   case "erl":
     mode.mode = "text/x-erlang";
     mode.file = "erlang";
@@ -79,9 +75,8 @@ function getMode(extension) {
     mode.file = "javascript";
     break;
   case "md":
-  case "markdown":
-    mode.mode = "gfm";
-    mode.file = "gfm";
+    mode.mode = "markdown";
+    mode.file = "markdown";
     break;
   case "pl":
     mode.mode = "text/x-perl";
@@ -99,6 +94,9 @@ function getMode(extension) {
     mode.mode = "text/x-ruby";
     mode.file = "ruby";
     break;
+  case "tpl":
+    mode.mode = "smarty";
+    mode.file = "smarty";
   case "sh":
   case "zsh":
     mode.mode = "text/x-sh";
@@ -159,10 +157,6 @@ function getMode(extension) {
     mode.mode = "application/xml-dtd";
     mode.file = extension;
     break;
-  case "tpl":
-    mode.mode = "text/x-smarty";
-    mode.file = "smartymixed";
-    break;
   case "ls":
     mode.mode = "text/x-livescript";
     mode.file = "livescript";
@@ -180,6 +174,9 @@ function getMode(extension) {
     mode.mode = "text/x-sass";
     mode.file = "sass";
     break;
+  case "ps1":
+    mode.mode = "text/powershell";
+    mode.file = "powershell";
   default:
     mode.mode = "text/x-" + extension;
     mode.file = extension;
