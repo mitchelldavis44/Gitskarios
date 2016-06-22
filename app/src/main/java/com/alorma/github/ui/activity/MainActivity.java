@@ -22,6 +22,7 @@ import com.alorma.github.BuildConfig;
 import com.alorma.github.GitskariosSettings;
 import com.alorma.github.R;
 import com.alorma.github.StoreCredentials;
+import com.alorma.github.explore.fragment.ExploreFragment;
 import com.alorma.github.sdk.bean.dto.response.Notification;
 import com.alorma.github.sdk.bean.dto.response.User;
 import com.alorma.github.sdk.bean.info.RepoInfo;
@@ -227,13 +228,11 @@ public class MainActivity extends BaseActivity implements AccountHeader.OnAccoun
         new PrimaryDrawerItem().withName(R.string.navigation_issues)
             .withIcon(Octicons.Icon.oct_issue_opened)
             .withIconColor(iconColor)
-            .withIdentifier(R.id.nav_drawer_issues), new DividerDrawerItem()
-        /*,
-
-        new SecondaryDrawerItem().withName(R.string.navigation_favorites)
-        .withIdentifier(R.id.navigation_favorites),
-        new DividerDrawerItem()
-        */, new PrimaryDrawerItem().withName(R.string.navigation_gists)
+            .withIdentifier(R.id.nav_drawer_issues),
+        new PrimaryDrawerItem().withName(R.string.github_explore)
+        .withIdentifier(R.id.nav_drawer_explore)
+        , new DividerDrawerItem()
+        , new PrimaryDrawerItem().withName(R.string.navigation_gists)
             .withIcon(Octicons.Icon.oct_gist)
             .withIconColor(iconColor)
             .withIdentifier(R.id.nav_drawer_gists),
@@ -300,6 +299,9 @@ public class MainActivity extends BaseActivity implements AccountHeader.OnAccoun
             return true;
           case R.id.nav_drawer_issues:
             onIssuesSelected();
+            return true;
+          case R.id.nav_drawer_explore:
+            openExplore();
             return true;
           case R.id.nav_drawer_gists:
             onGistsSelected();
@@ -572,6 +574,11 @@ public class MainActivity extends BaseActivity implements AccountHeader.OnAccoun
 
   public boolean onIssuesSelected() {
     setFragment(GenericIssuesListFragment.newInstance(), false);
+    return false;
+  }
+
+  public boolean openExplore() {
+    setFragment(ExploreFragment.newInstance(), false);
     return false;
   }
 

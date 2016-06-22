@@ -148,5 +148,7 @@
         type="id"/>
   <item name="open_gitskarios_issue"
         type="id"/>
+  <item name="nav_drawer_explore"
+        type="id"/>
 
 </resources>

@@ -517,4 +517,5 @@
   <string name="add_image_by_link">By link</string>
   <string name="add_image_by_upload">Upload image</string>
   <string name="imgur_uploading_image_title_done">Image uploaded</string>
+  <string name="github_explore">Explore</string>
 </resources>
